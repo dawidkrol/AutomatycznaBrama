@@ -1,0 +1,145 @@
+package brama
+public
+	
+system SystemSterowania
+end SystemSterowania;
+
+system implementation SystemSterowania.impl
+	subcomponents
+		this_motion_sensor: device MotionSensor;
+		this_motor: device Motor;
+		this_remote: device Remote;
+		this_distance_sensor: device DistanceSensor;
+		this_controller: process Controller.impl;
+		this_bus: bus BusComponent.impl;
+		this_processor: processor MainProcessor.impl;
+	connections
+		motion_conn: port this_motion_sensor.motion_detected -> this_motor.motor_on_off;
+		distance_conn: port this_distance_sensor.object_detected_close -> this_motor.motor_on_off;
+		remote_conn: port this_remote.clicked_open_close_button -> this_motor.motor_on_off;
+		
+		bus_motion: bus access this_bus -> this_motion_sensor.bus_access;
+		bus_distance: bus access this_bus -> this_distance_sensor.bus_access;
+		bus_motor: bus access this_bus -> this_motor.bus_access;
+		bus_processor: bus access this_bus -> this_processor.bus_access;
+		bus_remote: bus access this_bus -> this_remote.bus_access;
+end SystemSterowania.impl;
+
+process Controller
+	features
+		motion_in: in event port;
+		object_close_in: in event port;
+		motor_out: out event port;
+		remote_in: in event port;
+end Controller;
+
+process implementation Controller.impl
+	subcomponents
+		this_thread_read_remote: thread ReadRemote.impl;
+		this_thread_read_motion_sensor: thread ReadMotionSensor.impl;
+		this_thread_read_distance_sensor: thread ReadDistanceSensor.impl;
+		this_thread_control_motor: thread ControlMotor.impl;
+	connections
+		remote_thread_conn: port remote_in -> this_thread_read_remote.action_from_remote_in;
+		motion_thread_conn: port motion_in -> this_thread_read_motion_sensor.motion_in;
+		distance_thread_conn: port object_close_in -> this_thread_read_distance_sensor.distance_in;
+		motion_control_conn: port this_thread_read_motion_sensor.motion_out -> this_thread_control_motor.motion_in;
+		distance_control_conn: port this_thread_read_distance_sensor.distance_out -> this_thread_control_motor.distance_in;
+		remote_control_conn: port this_thread_read_remote.action_from_remote_out -> this_thread_control_motor.remote_in;
+		motor_control_conn: port this_thread_control_motor.motor_out -> motor_out;
+end Controller.impl;
+
+thread ReadRemote
+	features
+		action_from_remote_in: in event port;
+		action_from_remote_out: out event port;
+end ReadRemote;
+
+thread implementation ReadRemote.impl
+end ReadRemote.impl;
+
+thread ReadMotionSensor
+	features
+		motion_in: in event port;
+		motion_out: out event port;
+end ReadMotionSensor;
+
+thread implementation ReadMotionSensor.impl
+end ReadMotionSensor.impl;
+
+thread ReadDistanceSensor
+	features
+		distance_in: in event port;
+		distance_out: out event port;
+end ReadDistanceSensor;
+
+thread implementation ReadDistanceSensor.impl
+end ReadDistanceSensor.impl;
+
+thread ControlMotor
+	features
+		distance_in: in event port;
+		motion_in: in event port;
+		remote_in: in event port;
+		motor_out: out event port;
+end ControlMotor;
+
+thread implementation ControlMotor.impl
+end ControlMotor.impl;
+
+processor MainProcessor
+	features
+		bus_access: requires bus access BusComponent;
+end MainProcessor;
+
+processor implementation MainProcessor.impl
+	subcomponents
+		this_ram: memory Ram;
+end MainProcessor.impl;
+
+memory Ram
+end Ram;
+
+bus BusComponent
+end BusComponent;
+
+bus implementation BusComponent.impl
+end BusComponent.impl;
+	
+device MotionSensor
+	features
+		motion_detected: out event port;
+		bus_access: requires bus access BusComponent;
+end MotionSensor;
+
+device implementation MotionSensor.impl
+end MotionSensor.impl;
+
+device Motor
+	features
+		motor_on_off: in event port;
+		bus_access: requires bus access BusComponent;
+end Motor;
+
+device implementation Motor.impl
+end Motor.impl;
+
+device Remote
+	features
+		clicked_open_close_button: out event port;
+		bus_access: requires bus access BusComponent;
+end Remote;
+
+device implementation Remote.impl
+end Remote.impl;
+
+device DistanceSensor
+	features
+		object_detected_close: out event port;
+		bus_access: requires bus access BusComponent;
+end DistanceSensor;
+
+device implementation DistanceSensor.impl
+end DistanceSensor.impl;
+	
+end brama;
