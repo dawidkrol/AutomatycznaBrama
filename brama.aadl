@@ -23,6 +23,19 @@ system implementation SystemSterowania.impl
 		bus_motor: bus access this_bus -> this_motor.bus_access;
 		bus_processor: bus access this_bus -> this_processor.bus_access;
 		bus_remote: bus access this_bus -> this_remote.bus_access;
+		
+	properties
+  		Actual_Processor_Binding => (reference(this_processor))applies to this_motion_sensor;
+  		Actual_Processor_Binding => (reference(this_processor))applies to this_motor;
+  		Actual_Processor_Binding => (reference(this_processor))applies to this_remote;
+  		Actual_Processor_Binding => (reference(this_processor))applies to this_distance_sensor;
+  		Actual_Processor_Binding => (reference(this_processor))applies to this_controller;
+ 
+  		Actual_Connection_Binding => (reference(this_motor))applies to this_remote.clicked_open_close_button;
+  		Actual_Connection_Binding => (reference(this_motor))applies to this_distance_sensor.object_detected_close;
+  		Actual_Connection_Binding => (reference(this_motor))applies to this_motion_sensor.motion_detected;
+  		Actual_Connection_Binding => (reference(this_motor))applies to this_controller.this_thread_read_remote;
+  		
 end SystemSterowania.impl;
 
 process Controller
