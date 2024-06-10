@@ -1,0 +1,21 @@
+Bound Resource Budget Analysis Report
+
+
+Processor Summary Report: 
+  Processor this_processor: Total MIPS 4,800 MIPS of bound tasks within MIPS capacity 100,000 MIPS of this_processor
+
+Memory Summary Report: 
+  No Memory with Memory_Size or RAMCapacity or ROMCapacity
+
+
+Detailed Workload Report:  for Processor this_processor with Capacity 100,000 MIPS
+
+Component,Budget,Actual
+  thread this_controller.this_thread_read_remote,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_remote total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_motion_sensor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_motion_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_distance_sensor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_distance_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_control_motor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_control_motor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_force,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_force total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_light,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_light total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+process this_controller, 0,800 MIPS,4,800 MIPS,Error: subtotal/actual exceeds budget 0,800 by 4,000 MIPS
+Total,,4,800 MIPS

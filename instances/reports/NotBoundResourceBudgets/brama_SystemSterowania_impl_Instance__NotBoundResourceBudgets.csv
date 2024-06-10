@@ -1,0 +1,36 @@
+Not Bound Resource Budget Analysis Report
+
+Resource Summary: 
+  MIPS capacity 100,000 MIPS : MIPS budget 11,200 MIPS
+  1 out of 1 with MIPS capacity
+  15 out of 15 with MIPS budget
+
+
+
+Detailed Processor MIPS Capacity Report 
+
+Component,Capacity
+processor this_processor, 100,000 MIPS,
+Total, 100,000 MIPS,
+
+
+Detailed MIPS Budget Report 
+
+Component,Budget,Actual,Notes
+device this_motion_sensor, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_motion_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_motor, 0,000 MIPS,0,000 MIPS,
+device this_remote, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_remote total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_distance_sensor, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_distance_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_camera, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_camera total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_force_sensor, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_force_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_alarm, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_alarm total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_light_sensor, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_light_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+device this_video_saver, 0,800 MIPS,0,000 MIPS,device SystemSterowania_impl_Instance.this_video_saver total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_remote,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_remote total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_motion_sensor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_motion_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_distance_sensor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_distance_sensor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_control_motor,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_control_motor total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_force,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_force total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+  thread this_controller.this_thread_read_light,   0,800 MIPS,  0,000 MIPS,thread SystemSterowania_impl_Instance.this_controller.this_thread_read_light total 0,000 MIPS below budget 0,800 MIPS (100,0 % slack)
+process this_controller, 0,800 MIPS,4,800 MIPS,Error: subtotal/actual exceeds budget 0,800 by 4,000 MIPS
+Total, ,11,200 MIPS,

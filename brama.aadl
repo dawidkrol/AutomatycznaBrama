@@ -65,6 +65,8 @@ process Controller
         get_video: in data port video_data;
         motor_out: out event port;
         alarm_out: out event port;
+     properties
+    	SEI::MIPSBudget => 0.8 mips;
 end Controller;
 
 process implementation Controller.impl
@@ -94,6 +96,8 @@ thread ReadRemote
     features
         action_from_remote_in: in event port;
         action_from_remote_out: out event port;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ReadRemote;
 
 thread implementation ReadRemote.impl
@@ -103,6 +107,8 @@ thread ReadMotionSensor
     features
         motion_in: in event port;
         motion_out: out event port;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ReadMotionSensor;
 
 thread implementation ReadMotionSensor.impl
@@ -112,6 +118,8 @@ thread ReadDistanceSensor
     features
         distance_in: in event port;
         distance_out: out event port;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ReadDistanceSensor;
 
 thread implementation ReadDistanceSensor.impl
@@ -126,6 +134,8 @@ thread ControlMotor
         light_in: in data port light_data;
         motor_out: out event port;
         alarm_out: out event port;
+     properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ControlMotor;
 
 thread implementation ControlMotor.impl
@@ -135,6 +145,8 @@ thread ReadForce
     features
         force_in: in data port force_data;
         force_out: out data port force_data;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ReadForce;
 
 thread implementation ReadForce.impl
@@ -144,6 +156,8 @@ thread ReadLight
     features
         light_in: in data port light_data;
         light_out: out data port light_data;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
 end ReadLight;
 
 thread implementation ReadLight.impl
@@ -152,6 +166,10 @@ end ReadLight.impl;
 processor MainProcessor
     features
         bus_access: requires bus access BusComponent;
+	properties
+		Timing_Properties::Processor_Capacity => 1.0 MIPS;
+    	SEI::MIPSCapacity => 100.0 mips;
+    	SEI::GrossWeight => 0.1kg;
 end MainProcessor;
 
 processor implementation MainProcessor.impl
@@ -160,9 +178,15 @@ processor implementation MainProcessor.impl
 end MainProcessor.impl;
 
 memory Ram
+	properties
+		SEI::GrossWeight => 0.2kg;
 end Ram;
 
 bus BusComponent
+	properties
+		Transmission_Time => [Fixed => 1ns .. 2ns; PerByte => 5ns .. 6ns;];
+		Period => 1ms;
+		SEI::GrossWeight => 1.0kg;
 end BusComponent;
 
 bus implementation BusComponent.impl
@@ -172,6 +196,9 @@ device MotionSensor
     features
         motion_detected: out event port;
         bus_access: requires bus access BusComponent;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
+    	SEI::GrossWeight => 1.0kg;
 end MotionSensor;
 
 device implementation MotionSensor.impl
@@ -181,6 +208,8 @@ device Motor
     features
         motor_on_off: in event port;
         bus_access: requires bus access BusComponent;
+	properties
+		SEI::GrossWeight => 10.0kg;
 end Motor;
 
 device implementation Motor.impl
@@ -190,6 +219,9 @@ device Remote
     features
         clicked_open_close_button: out event port;
         bus_access: requires bus access BusComponent;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
+    	SEI::GrossWeight => 0.1kg;
 end Remote;
 
 device implementation Remote.impl
@@ -199,6 +231,9 @@ device DistanceSensor
     features
         object_detected_close: out event port;
         bus_access: requires bus access BusComponent;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
+    	SEI::GrossWeight => 0.5kg;
 end DistanceSensor;
 
 device implementation DistanceSensor.impl
@@ -208,6 +243,9 @@ device ForceSensor
     features
         force_detected: out data port force_data;
         bus_access: requires bus access BusComponent;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
+    	SEI::GrossWeight => 0.5kg;
 end ForceSensor;
 
 device implementation ForceSensor.impl
@@ -217,6 +255,9 @@ device LightSensor
     features
         light_detected: out data port light_data;
         bus_access: requires bus access BusComponent;
+   	properties
+    	SEI::MIPSBudget => 0.8 mips;
+       	SEI::GrossWeight => 0.5kg;
 end LightSensor;
 
 device implementation LightSensor.impl
@@ -226,6 +267,9 @@ device Alarm
     features
         alarm_trigger: in event port;
         bus_access: requires bus access BusComponent;
+    properties
+    	SEI::MIPSBudget => 0.8 mips;
+    	SEI::GrossWeight => 1.0kg;
 end Alarm;
 
 device implementation Alarm.impl
@@ -236,6 +280,7 @@ device VideoSaver
         save_video_input: in data port video_data;
     properties
         SEI::GrossWeight => 1.0kg;
+    	SEI::MIPSBudget => 0.8 mips;
 end VideoSaver;
 
 device implementation VideoSaver.impl
@@ -264,6 +309,7 @@ device Camera
         bus_access: requires bus access BusComponent;
     properties
         SEI::GrossWeight => 0.5kg;
+    	SEI::MIPSBudget => 0.8 mips;
 end Camera;
 
 device implementation Camera.impl
