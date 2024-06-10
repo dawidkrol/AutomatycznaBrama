@@ -1,113 +1,162 @@
 package brama
 public
-	
+    with SEI;
+    with Data_Model;
+
 system SystemSterowania
 end SystemSterowania;
 
 system implementation SystemSterowania.impl
-	subcomponents
-		this_motion_sensor: device MotionSensor;
-		this_motor: device Motor;
-		this_remote: device Remote;
-		this_distance_sensor: device DistanceSensor;
-		this_controller: process Controller.impl;
-		this_bus: bus BusComponent.impl;
-		this_processor: processor MainProcessor.impl;
-	connections
-		motion_conn: port this_motion_sensor.motion_detected -> this_motor.motor_on_off;
-		distance_conn: port this_distance_sensor.object_detected_close -> this_motor.motor_on_off;
-		remote_conn: port this_remote.clicked_open_close_button -> this_motor.motor_on_off;
-		
-		bus_motion: bus access this_bus -> this_motion_sensor.bus_access;
-		bus_distance: bus access this_bus -> this_distance_sensor.bus_access;
-		bus_motor: bus access this_bus -> this_motor.bus_access;
-		bus_processor: bus access this_bus -> this_processor.bus_access;
-		bus_remote: bus access this_bus -> this_remote.bus_access;
-		
-	properties
-  		Actual_Processor_Binding => (reference(this_processor))applies to this_motion_sensor;
-  		Actual_Processor_Binding => (reference(this_processor))applies to this_motor;
-  		Actual_Processor_Binding => (reference(this_processor))applies to this_remote;
-  		Actual_Processor_Binding => (reference(this_processor))applies to this_distance_sensor;
-  		Actual_Processor_Binding => (reference(this_processor))applies to this_controller;
- 
-  		Actual_Connection_Binding => (reference(this_motor))applies to this_remote.clicked_open_close_button;
-  		Actual_Connection_Binding => (reference(this_motor))applies to this_distance_sensor.object_detected_close;
-  		Actual_Connection_Binding => (reference(this_motor))applies to this_motion_sensor.motion_detected;
-  		Actual_Connection_Binding => (reference(this_motor))applies to this_controller.this_thread_read_remote;
-  		
+    subcomponents
+        this_motion_sensor: device MotionSensor.impl;
+        this_motor: device Motor.impl;
+        this_remote: device Remote.impl;
+        this_distance_sensor: device DistanceSensor.impl;
+        this_controller: process Controller.impl;
+        this_bus: bus BusComponent.impl;
+        this_processor: processor MainProcessor.impl;
+        this_camera: device Camera.impl;
+        this_force_sensor: device ForceSensor.impl;
+        this_alarm: device Alarm.impl;
+        this_light_sensor: device LightSensor.impl;
+        this_video_saver: device VideoSaver.impl;
+    connections
+        motion_conn: port this_motion_sensor.motion_detected -> this_controller.motion_in;
+        distance_conn: port this_distance_sensor.object_detected_close -> this_controller.object_close_in;
+        remote_conn: port this_remote.clicked_open_close_button -> this_controller.remote_in;
+        force_conn: port this_force_sensor.force_detected -> this_controller.force_in;
+        light_conn: port this_light_sensor.light_detected -> this_controller.light_in;
+        alarm_conn: port this_controller.alarm_out -> this_alarm.alarm_trigger;
+
+        bus_motion: bus access this_bus -> this_motion_sensor.bus_access;
+        bus_distance: bus access this_bus -> this_distance_sensor.bus_access;
+        bus_motor: bus access this_bus -> this_motor.bus_access;
+        bus_processor: bus access this_bus -> this_processor.bus_access;
+        bus_remote: bus access this_bus -> this_remote.bus_access;
+        bus_camera: bus access this_bus -> this_camera.bus_access;
+        bus_force_sensor: bus access this_bus -> this_force_sensor.bus_access;
+        bus_light_sensor: bus access this_bus -> this_light_sensor.bus_access;
+        bus_alarm: bus access this_bus -> this_alarm.bus_access;
+
+        controller_motor_conn: port this_controller.motor_out -> this_motor.motor_on_off;
+        camera_video_conn: port this_camera.save_video -> this_controller.get_video;
+        
+        controller_video_saver_conn: port this_controller.save_video -> this_video_saver.save_video_input;
+    properties
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_motion_sensor;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_motor;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_remote;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_distance_sensor;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_controller;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_camera;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_force_sensor;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_light_sensor;
+        Actual_Processor_Binding => (reference(this_processor)) applies to this_alarm;
 end SystemSterowania.impl;
 
 process Controller
-	features
-		motion_in: in event port;
-		object_close_in: in event port;
-		motor_out: out event port;
-		remote_in: in event port;
+    features
+        motion_in: in event port;
+        object_close_in: in event port;
+        remote_in: in event port;
+        force_in: in data port force_data;
+        light_in: in data port light_data;
+        save_video: out data port video_data;
+        get_video: in data port video_data;
+        motor_out: out event port;
+        alarm_out: out event port;
 end Controller;
 
 process implementation Controller.impl
-	subcomponents
-		this_thread_read_remote: thread ReadRemote.impl;
-		this_thread_read_motion_sensor: thread ReadMotionSensor.impl;
-		this_thread_read_distance_sensor: thread ReadDistanceSensor.impl;
-		this_thread_control_motor: thread ControlMotor.impl;
-	connections
-		remote_thread_conn: port remote_in -> this_thread_read_remote.action_from_remote_in;
-		motion_thread_conn: port motion_in -> this_thread_read_motion_sensor.motion_in;
-		distance_thread_conn: port object_close_in -> this_thread_read_distance_sensor.distance_in;
-		motion_control_conn: port this_thread_read_motion_sensor.motion_out -> this_thread_control_motor.motion_in;
-		distance_control_conn: port this_thread_read_distance_sensor.distance_out -> this_thread_control_motor.distance_in;
-		remote_control_conn: port this_thread_read_remote.action_from_remote_out -> this_thread_control_motor.remote_in;
-		motor_control_conn: port this_thread_control_motor.motor_out -> motor_out;
-end Controller.impl;
+    subcomponents
+        this_thread_read_remote: thread ReadRemote.impl;
+        this_thread_read_motion_sensor: thread ReadMotionSensor.impl;
+        this_thread_read_distance_sensor: thread ReadDistanceSensor.impl;
+        this_thread_control_motor: thread ControlMotor.impl;
+        this_thread_read_force: thread ReadForce.impl;
+        this_thread_read_light: thread ReadLight.impl;
+    connections
+        remote_thread_conn: port remote_in -> this_thread_read_remote.action_from_remote_in;
+        motion_thread_conn: port motion_in -> this_thread_read_motion_sensor.motion_in;
+        distance_thread_conn: port object_close_in -> this_thread_read_distance_sensor.distance_in;
+        force_thread_conn: port force_in -> this_thread_read_force.force_in;
+        light_thread_conn: port light_in -> this_thread_read_light.light_in;
+        motion_control_conn: port this_thread_read_motion_sensor.motion_out -> this_thread_control_motor.motion_in;
+        distance_control_conn: port this_thread_read_distance_sensor.distance_out -> this_thread_control_motor.distance_in;
+        remote_control_conn: port this_thread_read_remote.action_from_remote_out -> this_thread_control_motor.remote_in;
+        force_control_conn: port this_thread_read_force.force_out -> this_thread_control_motor.force_in;
+        light_control_conn: port this_thread_read_light.light_out -> this_thread_control_motor.light_in;
+        motor_control_conn: port this_thread_control_motor.motor_out -> motor_out;
+        alarm_control_conn: port this_thread_control_motor.alarm_out -> alarm_out;
+    end Controller.impl;
 
 thread ReadRemote
-	features
-		action_from_remote_in: in event port;
-		action_from_remote_out: out event port;
+    features
+        action_from_remote_in: in event port;
+        action_from_remote_out: out event port;
 end ReadRemote;
 
 thread implementation ReadRemote.impl
 end ReadRemote.impl;
 
 thread ReadMotionSensor
-	features
-		motion_in: in event port;
-		motion_out: out event port;
+    features
+        motion_in: in event port;
+        motion_out: out event port;
 end ReadMotionSensor;
 
 thread implementation ReadMotionSensor.impl
 end ReadMotionSensor.impl;
 
 thread ReadDistanceSensor
-	features
-		distance_in: in event port;
-		distance_out: out event port;
+    features
+        distance_in: in event port;
+        distance_out: out event port;
 end ReadDistanceSensor;
 
 thread implementation ReadDistanceSensor.impl
 end ReadDistanceSensor.impl;
 
 thread ControlMotor
-	features
-		distance_in: in event port;
-		motion_in: in event port;
-		remote_in: in event port;
-		motor_out: out event port;
+    features
+        distance_in: in event port;
+        motion_in: in event port;
+        remote_in: in event port;
+        force_in: in data port force_data;
+        light_in: in data port light_data;
+        motor_out: out event port;
+        alarm_out: out event port;
 end ControlMotor;
 
 thread implementation ControlMotor.impl
 end ControlMotor.impl;
 
+thread ReadForce
+    features
+        force_in: in data port force_data;
+        force_out: out data port force_data;
+end ReadForce;
+
+thread implementation ReadForce.impl
+end ReadForce.impl;
+
+thread ReadLight
+    features
+        light_in: in data port light_data;
+        light_out: out data port light_data;
+end ReadLight;
+
+thread implementation ReadLight.impl
+end ReadLight.impl;
+
 processor MainProcessor
-	features
-		bus_access: requires bus access BusComponent;
+    features
+        bus_access: requires bus access BusComponent;
 end MainProcessor;
 
 processor implementation MainProcessor.impl
-	subcomponents
-		this_ram: memory Ram;
+    subcomponents
+        this_ram: memory Ram;
 end MainProcessor.impl;
 
 memory Ram
@@ -118,41 +167,106 @@ end BusComponent;
 
 bus implementation BusComponent.impl
 end BusComponent.impl;
-	
+
 device MotionSensor
-	features
-		motion_detected: out event port;
-		bus_access: requires bus access BusComponent;
+    features
+        motion_detected: out event port;
+        bus_access: requires bus access BusComponent;
 end MotionSensor;
 
 device implementation MotionSensor.impl
 end MotionSensor.impl;
 
 device Motor
-	features
-		motor_on_off: in event port;
-		bus_access: requires bus access BusComponent;
+    features
+        motor_on_off: in event port;
+        bus_access: requires bus access BusComponent;
 end Motor;
 
 device implementation Motor.impl
 end Motor.impl;
 
 device Remote
-	features
-		clicked_open_close_button: out event port;
-		bus_access: requires bus access BusComponent;
+    features
+        clicked_open_close_button: out event port;
+        bus_access: requires bus access BusComponent;
 end Remote;
 
 device implementation Remote.impl
 end Remote.impl;
 
 device DistanceSensor
-	features
-		object_detected_close: out event port;
-		bus_access: requires bus access BusComponent;
+    features
+        object_detected_close: out event port;
+        bus_access: requires bus access BusComponent;
 end DistanceSensor;
 
 device implementation DistanceSensor.impl
 end DistanceSensor.impl;
-	
+
+device ForceSensor
+    features
+        force_detected: out data port force_data;
+        bus_access: requires bus access BusComponent;
+end ForceSensor;
+
+device implementation ForceSensor.impl
+end ForceSensor.impl;
+
+device LightSensor
+    features
+        light_detected: out data port light_data;
+        bus_access: requires bus access BusComponent;
+end LightSensor;
+
+device implementation LightSensor.impl
+end LightSensor.impl;
+
+device Alarm
+    features
+        alarm_trigger: in event port;
+        bus_access: requires bus access BusComponent;
+end Alarm;
+
+device implementation Alarm.impl
+end Alarm.impl;
+
+device VideoSaver
+    features
+        save_video_input: in data port video_data;
+    properties
+        SEI::GrossWeight => 1.0kg;
+end VideoSaver;
+
+device implementation VideoSaver.impl
+end VideoSaver.impl;
+
+data force_data
+    properties
+        Data_Model::Data_Representation => Float;
+end force_data;
+
+data light_data
+    properties
+        Data_Model::Data_Representation => Float;
+end light_data;
+
+data video_data
+    properties
+        Data_Model::Data_Representation => Integer;
+        Data_Model::Number_Representation => Signed;
+        Data_Size => 2_764_800 Bytes;
+end video_data;
+
+device Camera
+    features
+        save_video: out data port video_data;
+        bus_access: requires bus access BusComponent;
+    properties
+        SEI::GrossWeight => 0.5kg;
+end Camera;
+
+device implementation Camera.impl
+end Camera.impl;
+
 end brama;

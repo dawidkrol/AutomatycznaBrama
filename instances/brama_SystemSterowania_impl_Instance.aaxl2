@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance">
+  <instance:SystemInstance name="SystemSterowania_impl_Instance" category="system">
+    <componentInstance name="this_bus" category="bus">
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedBusSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusImplementation" href="../brama.aadl#brama.BusComponent.impl"/>
+    </componentInstance>
+    <componentInstance name="this_motion_sensor" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="motion_detected" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.21/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.MotionSensor.impl"/>
+    </componentInstance>
+    <componentInstance name="this_motor" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="motor_on_off" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.23/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.Motor.impl"/>
+    </componentInstance>
+    <componentInstance name="this_remote" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="clicked_open_close_button" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.25/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.Remote.impl"/>
+    </componentInstance>
+    <componentInstance name="this_distance_sensor" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="object_detected_close" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.27/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.DistanceSensor.impl"/>
+    </componentInstance>
+    <componentInstance name="this_camera" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.5"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.5">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="save_video" direction="out" type="/2">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Number_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.13/@ownedPropertyType/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="2764800">
+              <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.1"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.2"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.Camera.impl"/>
+    </componentInstance>
+    <componentInstance name="this_force_sensor" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.6"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="force_detected" direction="out" type="/3">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.29/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.ForceSensor.impl"/>
+    </componentInstance>
+    <componentInstance name="this_alarm" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.8"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="alarm_trigger" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.33/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.Alarm.impl"/>
+    </componentInstance>
+    <componentInstance name="this_light_sensor" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.7"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="light_detected" direction="out" type="/4">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusAccess.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.LightSensor.impl"/>
+    </componentInstance>
+    <componentInstance name="this_video_saver" category="device">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="1.0">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.35/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="save_video_input" type="/2">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Number_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.13/@ownedPropertyType/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="2764800">
+              <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.1"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.2"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.35/@ownedDataPort.0"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.8"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:DeviceImplementation" href="../brama.aadl#brama.VideoSaver.impl"/>
+    </componentInstance>
+    <componentInstance name="this_controller" category="process">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="force_in" type="/3">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="light_in" type="/4">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="save_video" direction="out" type="/2">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Number_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.13/@ownedPropertyType/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="2764800">
+              <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.1"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.2"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="get_video" type="/2">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Number_Representation"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:NamedValue">
+              <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.13/@ownedPropertyType/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.1"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="2764800">
+              <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.1"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.2"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="motion_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="object_close_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="remote_in" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.2"/>
+      </featureInstance>
+      <featureInstance name="motor_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.3"/>
+      </featureInstance>
+      <featureInstance name="alarm_out" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedEventPort.4"/>
+      </featureInstance>
+      <componentInstance name="this_thread_read_remote" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="action_from_remote_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="action_from_remote_out" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ReadRemote.impl"/>
+      </componentInstance>
+      <componentInstance name="this_thread_read_motion_sensor" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="motion_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="motion_out" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedEventPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.1"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ReadMotionSensor.impl"/>
+      </componentInstance>
+      <componentInstance name="this_thread_read_distance_sensor" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="distance_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="distance_out" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedEventPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.2"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ReadDistanceSensor.impl"/>
+      </componentInstance>
+      <componentInstance name="this_thread_control_motor" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="force_in" type="/3">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="light_in" type="/4">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="distance_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+        </featureInstance>
+        <featureInstance name="motion_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+        </featureInstance>
+        <featureInstance name="remote_in" category="eventPort">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.2"/>
+        </featureInstance>
+        <featureInstance name="motor_out" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.3"/>
+        </featureInstance>
+        <featureInstance name="alarm_out" category="eventPort" direction="out">
+          <feature xsi:type="aadl2:EventPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.4"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.3"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ControlMotor.impl"/>
+      </componentInstance>
+      <componentInstance name="this_thread_read_force" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="force_in" type="/3">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="force_out" direction="out" type="/3">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedDataPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.4"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ReadForce.impl"/>
+      </componentInstance>
+      <componentInstance name="this_thread_read_light" category="thread">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.11"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.4"/>
+        </ownedPropertyAssociation>
+        <featureInstance name="light_in" type="/4">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="light_out" direction="out" type="/4">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:NamedValue">
+                <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.1"/>
+        </featureInstance>
+        <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.5"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:ThreadImplementation" href="../brama.aadl#brama.ReadLight.impl"/>
+      </componentInstance>
+      <connectionInstance name="this_thread_read_remote.action_from_remote_out -> this_thread_control_motor.remote_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.4" source="/0/@componentInstance.10/@componentInstance.0/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.4">
+          <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.7"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="this_thread_read_motion_sensor.motion_out -> this_thread_control_motor.motion_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.3" source="/0/@componentInstance.10/@componentInstance.1/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.1/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.3">
+          <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.5"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="this_thread_read_distance_sensor.distance_out -> this_thread_control_motor.distance_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.2" source="/0/@componentInstance.10/@componentInstance.2/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.2/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.2">
+          <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.6"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="this_thread_read_force.force_out -> this_thread_control_motor.force_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.0" source="/0/@componentInstance.10/@componentInstance.4/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.4/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.0">
+          <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.8"/>
+        </connectionReference>
+      </connectionInstance>
+      <connectionInstance name="this_thread_read_light.light_out -> this_thread_control_motor.light_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.1" source="/0/@componentInstance.10/@componentInstance.5/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.5/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.3/@featureInstance.1">
+          <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.9"/>
+        </connectionReference>
+      </connectionInstance>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessImplementation" href="../brama.aadl#brama.Controller.impl"/>
+    </componentInstance>
+    <componentInstance name="this_processor" category="processor">
+      <featureInstance name="bus_access" category="busAccess" type="/1">
+        <feature xsi:type="aadl2:BusAccess" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedBusAccess.0"/>
+      </featureInstance>
+      <componentInstance name="this_ram" category="memory">
+        <subcomponent xsi:type="aadl2:MemorySubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedMemorySubcomponent.0"/>
+        <index>0</index>
+        <classifier xsi:type="aadl2:MemoryType" href="../brama.aadl#brama.Ram"/>
+      </componentInstance>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ProcessorImplementation" href="../brama.aadl#brama.MainProcessor.impl"/>
+    </componentInstance>
+    <connectionInstance name="this_bus -> this_motion_sensor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.1/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_distance_sensor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.4/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.4/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_motor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.2/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.2/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_processor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.11/@featureInstance.0" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.11/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_remote.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.3/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.3/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_camera.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.5/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.5/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_force_sensor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.6/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.6/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_light_sensor.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.8/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.8/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_bus -> this_alarm.bus_access" complete="true" kind="accessConnection" destination="/0/@componentInstance.7/@featureInstance.1" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.7/@featureInstance.1">
+        <connection xsi:type="aadl2:AccessConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedAccessConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_motion_sensor.motion_detected -> this_controller.this_thread_read_motion_sensor.motion_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.1/@featureInstance.0" source="/0/@componentInstance.1/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.1/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+      </connectionReference>
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@featureInstance.4" destination="/0/@componentInstance.10/@componentInstance.1/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_remote.clicked_open_close_button -> this_controller.this_thread_read_remote.action_from_remote_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.3/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.3/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+      </connectionReference>
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@featureInstance.6" destination="/0/@componentInstance.10/@componentInstance.0/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_distance_sensor.object_detected_close -> this_controller.this_thread_read_distance_sensor.distance_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.2/@featureInstance.0" source="/0/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.4/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.5">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+      </connectionReference>
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@featureInstance.5" destination="/0/@componentInstance.10/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.2"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_camera.save_video -> this_controller.get_video" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@featureInstance.3" source="/0/@componentInstance.5/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.5/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.3">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_force_sensor.force_detected -> this_controller.this_thread_read_force.force_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.4/@featureInstance.0" source="/0/@componentInstance.6/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.6/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+      </connectionReference>
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@featureInstance.0" destination="/0/@componentInstance.10/@componentInstance.4/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.3"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_light_sensor.light_detected -> this_controller.this_thread_read_light.light_in" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@componentInstance.5/@featureInstance.0" source="/0/@componentInstance.8/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.8/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+      </connectionReference>
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@featureInstance.1" destination="/0/@componentInstance.10/@componentInstance.5/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.4"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_controller.save_video -> this_video_saver.save_video_input" complete="true" kind="portConnection" destination="/0/@componentInstance.9/@featureInstance.0" source="/0/@componentInstance.10/@featureInstance.2">
+      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.2" destination="/0/@componentInstance.9/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_controller.this_thread_control_motor.motor_out -> this_motor.motor_on_off" complete="true" kind="portConnection" destination="/0/@componentInstance.2/@featureInstance.0" source="/0/@componentInstance.10/@componentInstance.3/@featureInstance.5">
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.3/@featureInstance.5" destination="/0/@componentInstance.10/@featureInstance.7">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.10"/>
+      </connectionReference>
+      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.7" destination="/0/@componentInstance.2/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+      </connectionReference>
+    </connectionInstance>
+    <connectionInstance name="this_controller.this_thread_control_motor.alarm_out -> this_alarm.alarm_trigger" complete="true" kind="portConnection" destination="/0/@componentInstance.7/@featureInstance.0" source="/0/@componentInstance.10/@componentInstance.3/@featureInstance.6">
+      <connectionReference context="/0/@componentInstance.10" source="/0/@componentInstance.10/@componentInstance.3/@featureInstance.6" destination="/0/@componentInstance.10/@featureInstance.8">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.11"/>
+      </connectionReference>
+      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.8" destination="/0/@componentInstance.7/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+      </connectionReference>
+    </connectionInstance>
+    <classifier xsi:type="aadl2:SystemImplementation" href="../brama.aadl#brama.SystemSterowania.impl"/>
+    <systemOperationMode name="No Modes"/>
+    <componentImplementation xsi:type="aadl2:SystemImplementation" href="../brama.aadl#brama.SystemSterowania.impl"/>
+  </instance:SystemInstance>
+  <instance:ComponentInstance name="brama::BusComponent" category="bus">
+    <classifier xsi:type="aadl2:BusType" href="../brama.aadl#brama.BusComponent"/>
+  </instance:ComponentInstance>
+  <instance:ComponentInstance name="brama::video_data" category="data">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.6"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Number_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.13/@ownedPropertyType/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:IntegerLiteral" value="2764800">
+          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.1"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.39/@ownedPropertyAssociation.2"/>
+    </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:DataType" href="../brama.aadl#brama.video_data"/>
+  </instance:ComponentInstance>
+  <instance:ComponentInstance name="brama::force_data" category="data">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.37/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:DataType" href="../brama.aadl#brama.force_data"/>
+  </instance:ComponentInstance>
+  <instance:ComponentInstance name="brama::light_data" category="data">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#Data_Model.Data_Representation"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:NamedValue">
+          <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.contribution.sei/resources/properties/Data_Model.aadl#/0/@ownedProperty.4/@ownedPropertyType/@ownedLiteral.4"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../brama.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:DataType" href="../brama.aadl#brama.light_data"/>
+  </instance:ComponentInstance>
+</xmi:XMI>

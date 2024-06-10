@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="43d93410-dea8-496f-a58d-2ab0f7060955" manual="true">
+    <element uuid="c2228f59-e2e1-4adb-958f-5be9958a7055" manual="true">
+      <element uuid="24e8a1a0-e6d5-4c58-9f2e-4f39ce5b2ef6" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>alarm_trigger</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="f6037294-cfe5-4a80-8399-b6142d403f49" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_alarm</seg>
+      </bo>
+      <position x="1069.059814453125" y="497.0"/>
+      <size width="294.60024642944336" height="110.0"/>
+    </element>
+    <element uuid="583c1055-d273-4b88-9fa4-6d0849b05b0f" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_bus</seg>
+      </bo>
+      <position x="12.0" y="70.0"/>
+      <size width="101.66145706176758" height="100.0"/>
+    </element>
+    <element uuid="d1903773-1b4e-483b-a867-c6b81e8f1b5e" manual="true">
+      <element uuid="413d4cd1-1e05-4ee1-bfe0-f31398a85204" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="c78c3e0e-90ee-4395-a32a-c1487c1ba3b6" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>save_video</seg>
+        </bo>
+        <position x="209.98958587646484" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_camera</seg>
+      </bo>
+      <position x="292.6295356750488" y="359.0"/>
+      <size width="289.44400787353516" height="60.0"/>
+    </element>
+    <element uuid="631dc964-cd75-4360-a5d7-bdfb792ebeec" manual="true">
+      <element uuid="e10f8cc1-2cfe-41c9-b94c-326df68b4a6c" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>alarm_out</seg>
+        </bo>
+        <position x="276.72789001464844" y="222.5"/>
+      </element>
+      <element uuid="f63bf42a-afa6-4989-a1c8-a5e595c36fce" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>force_in</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="34b05d2d-0b4d-4121-81bb-630f68b278fb" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>get_video</seg>
+        </bo>
+        <position y="160.0"/>
+      </element>
+      <element uuid="bcd499f9-3c12-431c-8b80-23ec4484346f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>light_in</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="033cc432-97bf-4b40-989c-9f71cdacc5ff" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motion_in</seg>
+        </bo>
+        <position y="260.0"/>
+      </element>
+      <element uuid="424477f1-7cfd-45e6-a6d7-2e18271551a3" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motor_out</seg>
+        </bo>
+        <position x="275.98570251464844" y="47.5"/>
+      </element>
+      <element uuid="fdda4f12-9836-44dd-a23d-092d5dafede6" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>object_close_in</seg>
+        </bo>
+        <position y="110.0"/>
+      </element>
+      <element uuid="ecd696f6-503a-4562-bd04-6e46a63bc724" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>remote_in</seg>
+        </bo>
+        <position y="210.0"/>
+      </element>
+      <element uuid="ce947fd1-36b8-461c-94e1-d34d78fbbb31" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>save_video</seg>
+        </bo>
+        <position x="268.56382751464844" y="135.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_controller</seg>
+      </bo>
+      <position x="701.0416259765625" y="179.0"/>
+      <size width="348.01824951171875" height="310.0"/>
+    </element>
+    <element uuid="7cac5110-2132-4ff8-a812-4ce6e15865fb" manual="true">
+      <element uuid="8e5d55f7-3b53-43cb-9192-fc8a77b4a365" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="f1ee978b-72f8-4039-a51c-85d73d76553d" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>object_detected_close</seg>
+        </bo>
+        <position x="321.94921112060547" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_distance_sensor</seg>
+      </bo>
+      <position x="204.03253555297852" y="279.0"/>
+      <size width="466.6380081176758" height="60.0"/>
+    </element>
+    <element uuid="51732b30-a39c-447d-8d4b-8adef0b4c80e" manual="true">
+      <element uuid="3e23c23f-65af-4637-8534-7ea3f0dba21c" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="e234ce7b-db8c-42c4-8563-e906fb39c311" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>force_detected</seg>
+        </bo>
+        <position x="257.45052337646484" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_force_sensor</seg>
+      </bo>
+      <position x="258.5214614868164" y="119.0"/>
+      <size width="357.66015625" height="60.0"/>
+    </element>
+    <element uuid="bfba98e2-5655-4011-89ef-a8b7b3dce24b" manual="true">
+      <element uuid="ca911471-b5e7-45bb-81f6-87a22bd7f56b" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="fc518838-f15a-46c8-a3f2-826562a3fea6" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>light_detected</seg>
+        </bo>
+        <position x="247.0859375" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_light_sensor</seg>
+      </bo>
+      <position x="266.2948989868164" y="199.0"/>
+      <size width="342.11328125" height="60.0"/>
+    </element>
+    <element uuid="a2acaf97-ca58-4c61-9349-f78bbda1f82e" manual="true">
+      <element uuid="1e714443-8584-4dfd-97ed-520b93969cb2" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="f8f64247-11a3-44e5-85b2-2acca5e9e938" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motion_detected</seg>
+        </bo>
+        <position x="278.20572662353516" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_motion_sensor</seg>
+      </bo>
+      <position x="242.9550552368164" y="519.0"/>
+      <size width="388.79296875" height="60.0"/>
+    </element>
+    <element uuid="d8cc29e3-600b-4e13-a744-88c1d7b88b26" manual="true">
+      <element uuid="176908db-6430-4c59-a72e-aad2202da8a2" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="e2bcf38d-9b28-4a3a-8e0b-2b4f95257693" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>motor_on_off</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_motor</seg>
+      </bo>
+      <position x="1069.059814453125" y="66.0"/>
+      <size width="295.3815116882324" height="110.0"/>
+    </element>
+    <element uuid="99768548-e376-4e62-bb9a-2aa991d84bdc" manual="true">
+      <element uuid="6c898dfe-aec8-48e3-b28d-a601176d5d1d" manual="true">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>this_ram</seg>
+        </bo>
+        <position/>
+        <size width="130.0" height="36.0"/>
+      </element>
+      <element uuid="e899ce2a-c0bc-4912-a462-549139098fc5" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_processor</seg>
+      </bo>
+      <position x="203.6614532470703" y="38.0"/>
+      <size width="308.71484375" height="60.0"/>
+    </element>
+    <element uuid="ac605c9a-9b36-4f20-b4dd-3417e5840633" manual="true">
+      <element uuid="612edc44-2604-496c-a11a-a9530d40b08f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>bus_access</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="2081c187-8153-4b80-9671-807fcf91f9bc" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>clicked_open_close_button</seg>
+        </bo>
+        <position x="294.52081298828125" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_remote</seg>
+      </bo>
+      <position x="203.6614532470703" y="439.0"/>
+      <size width="467.3801727294922" height="60.0"/>
+    </element>
+    <element uuid="a43975e3-d7db-4439-bae2-29c880eaba1c" manual="true">
+      <element uuid="ddc1b45d-3570-4e9e-bcbf-069cb953c071" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>save_video_input</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>this_video_saver</seg>
+      </bo>
+      <position x="1069.059814453125" y="304.0"/>
+      <size width="383.6237106323242" height="60.0"/>
+    </element>
+    <element uuid="793cb507-9329-4003-aba3-fbd8fc8202e1" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>alarm_conn : SystemSterowania_impl_Instance.this_controller.alarm_out -> SystemSterowania_impl_Instance.this_alarm.alarm_trigger</seg>
+      </bo>
+      <bendpoints>
+        <point x="1059.059814453125" y="433.5"/>
+        <point x="1059.059814453125" y="539.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="07b8dcbd-67ca-49cc-806c-4ba4799099bc" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_alarm : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_alarm.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="160.0"/>
+        <point x="123.66145324707031" y="160.0"/>
+        <point x="123.66145324707031" y="589.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="e150f48f-0400-4d44-a92a-622e904981e8" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_camera : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_camera.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="130.0"/>
+        <point x="153.6614532470703" y="130.0"/>
+        <point x="153.6614532470703" y="401.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a489237a-111c-4de9-8bf6-85bf0d7989a5" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_distance : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_distance_sensor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="119.99999237060547"/>
+        <point x="163.6614532470703" y="119.99999237060547"/>
+        <point x="163.6614532470703" y="321.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="54f96c00-a8d7-47fe-b170-7dd164c54dde" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_force_sensor : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_force_sensor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="100.0"/>
+        <point x="183.6614532470703" y="100.0"/>
+        <point x="183.6614532470703" y="161.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="56ddad12-f953-4a05-a252-d5744aeb25b7" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_light_sensor : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_light_sensor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="110.0"/>
+        <point x="173.6614532470703" y="110.0"/>
+        <point x="173.6614532470703" y="241.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="2d03b5d3-0370-4346-bda8-9b8dddb1ac7e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_motion : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_motion_sensor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="150.0"/>
+        <point x="133.6614532470703" y="150.0"/>
+        <point x="133.6614532470703" y="561.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="08c1fac8-f64d-44df-8a14-f5231fccc188" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_motor : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_motor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="90.0"/>
+        <point x="193.6614532470703" y="90.0"/>
+        <point x="193.6614532470703" y="108.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="e1190505-1ff2-4d0b-be5d-d0fb5a45c304" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_processor : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_processor.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="113.66145324707031" y="80.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="99a86441-9966-4cf1-9667-bd13c9024278" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>bus_remote : SystemSterowania_impl_Instance.this_bus -> SystemSterowania_impl_Instance.this_remote.bus_access</seg>
+      </bo>
+      <bendpoints>
+        <point x="117.66145324707031" y="140.0"/>
+        <point x="143.6614532470703" y="140.0"/>
+        <point x="143.6614532470703" y="481.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="ff09d744-5db0-4ac8-a669-efeb3222616b" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>camera_video_conn : SystemSterowania_impl_Instance.this_camera.save_video -> SystemSterowania_impl_Instance.this_controller.get_video</seg>
+      </bo>
+      <bendpoints>
+        <point x="681.0416259765625" y="401.0"/>
+        <point x="681.0416259765625" y="371.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="a11ac123-e9d6-4b0d-990f-3266503d231c" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>controller_motor_conn : SystemSterowania_impl_Instance.this_controller.motor_out -> SystemSterowania_impl_Instance.this_motor.motor_on_off</seg>
+      </bo>
+      <bendpoints>
+        <point x="1059.059814453125" y="258.5"/>
+        <point x="1059.059814453125" y="158.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="cbbbc6e1-1b3e-441a-94ec-dfc7daae0178" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>controller_video_saver_conn : SystemSterowania_impl_Instance.this_controller.save_video -> SystemSterowania_impl_Instance.this_video_saver.save_video_input</seg>
+      </bo>
+    </element>
+    <element uuid="ac82d4bf-708e-4e47-9df3-0878ae97183e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>distance_conn : SystemSterowania_impl_Instance.this_distance_sensor.object_detected_close -> SystemSterowania_impl_Instance.this_controller.object_close_in</seg>
+      </bo>
+    </element>
+    <element uuid="e117e435-3810-496f-84be-303f70244946" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>force_conn : SystemSterowania_impl_Instance.this_force_sensor.force_detected -> SystemSterowania_impl_Instance.this_controller.force_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="681.0416259765625" y="161.0"/>
+        <point x="681.0416259765625" y="221.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="c0a6ae3a-f68a-4162-b885-612b1f8f7f51" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>light_conn : SystemSterowania_impl_Instance.this_light_sensor.light_detected -> SystemSterowania_impl_Instance.this_controller.light_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="681.0416259765625" y="241.0"/>
+        <point x="681.0416259765625" y="271.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="3ea2a5b5-bb6a-4a72-a65b-d97b7c3146a6" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>motion_conn : SystemSterowania_impl_Instance.this_motion_sensor.motion_detected -> SystemSterowania_impl_Instance.this_controller.motion_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="691.0416259765625" y="561.0"/>
+        <point x="691.0416259765625" y="471.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="acb81063-31c7-4ba8-8b96-94f78cd94fe7" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>remote_conn : SystemSterowania_impl_Instance.this_remote.clicked_open_close_button -> SystemSterowania_impl_Instance.this_controller.remote_in</seg>
+      </bo>
+      <bendpoints>
+        <point x="681.0416259765625" y="481.0"/>
+        <point x="681.0416259765625" y="421.0"/>
+      </bendpoints>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/automatycznabrama/instances/brama_systemsterowania_impl_instance.aaxl2</seg>
+    </bo>
+    <position/>
+    <size width="1464.6834716796875" height="619.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/automatycznabrama/instances/brama_systemsterowania_impl_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>
